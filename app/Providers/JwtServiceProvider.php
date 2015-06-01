@@ -7,7 +7,7 @@ class JwtServiceProvider extends JWTAuthServiceProvider
 
 	public function boot()
 	{
-		$this->app['config']->set('jwt', require realpath(__DIR__ . '/../config/jwt.php'));
+		$this->app['config']->set('jwt', require realpath(__DIR__ . '/../../config/jwt.php'));
 		
 		$this->bootBindings();
 

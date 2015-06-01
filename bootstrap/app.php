@@ -2,7 +2,7 @@
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-// Dotenv::load(__DIR__.'/../');
+Dotenv::load(__DIR__.'/../');
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +19,9 @@ $app = new Laravel\Lumen\Application(
 	realpath(__DIR__.'/../')
 );
 
-$app->withFacades();
+// $app->withFacades();
 
-// class_alias('Tymon\JWTAuth\Facades\JWTAuth', 'JWTAuth');
-
-// $app->withEloquent();
+$app->withEloquent();
 
 // $app->configure('jwt');
 
@@ -97,7 +95,7 @@ $app->register('App\Providers\JwtServiceProvider');
 
 function config_path($path = '')
 {
-    return base_path('app/config/').$path;
+    return base_path('config/'.$path);
 }
 
 require __DIR__.'/../app/Http/routes.php';
