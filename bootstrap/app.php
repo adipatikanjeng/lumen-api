@@ -19,9 +19,13 @@ $app = new Laravel\Lumen\Application(
 	realpath(__DIR__.'/../')
 );
 
-// $app->withFacades();
+$app->withFacades();
+
+// class_alias('Tymon\JWTAuth\Facades\JWTAuth', 'JWTAuth');
 
 // $app->withEloquent();
+
+// $app->configure('jwt');
 
 /*
 |--------------------------------------------------------------------------
@@ -78,7 +82,7 @@ $app->singleton(
 |
 */
 
-// $app->register('App\Providers\AppServiceProvider');
+$app->register('App\Providers\JwtServiceProvider');
 
 /*
 |--------------------------------------------------------------------------
@@ -90,6 +94,11 @@ $app->singleton(
 | can respond to, as well as the controllers that may handle them.
 |
 */
+
+function config_path($path = '')
+{
+    return base_path('app/config/').$path;
+}
 
 require __DIR__.'/../app/Http/routes.php';
 

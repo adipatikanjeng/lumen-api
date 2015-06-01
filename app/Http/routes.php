@@ -12,5 +12,6 @@
 */
 
 $app->get('/', function() use ($app) {
-    return $app->welcome();
+    // return $app->welcome();
+	// dd(base_path('app/config'));
 });
