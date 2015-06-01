@@ -15,3 +15,5 @@ $app->get('/', function() use ($app) {
     // return $app->welcome();
 	// dd(base_path('app/config'));
 });
+$app->get('auth/login', '\App\Http\Controllers\AuthController@getLogin');
+$app->post('auth/login', '\App\Http\Controllers\AuthController@postLogin');
