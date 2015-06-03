@@ -23,8 +23,9 @@ class AuthController extends Controller
             // something went wrong whilst attempting to encode the token
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-
-        // all good so return the token      
-        return redirect('api/test?token='.$token);
+            
+        return response([], 200)
+              ->header('Authorization', 'Bearer '.$token);
+        
     }
 }
